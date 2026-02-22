@@ -19,7 +19,6 @@ A **responsive, modern BMI (Body Mass Index) Calculator** built with pure HTML, 
 |  **Input Validation** | Real-time inline errors on blur; clears as you type |
 |  **Fully Responsive** | Works on desktop, tablet, and mobile |
 |  **Dark Glassmorphism UI** | Animated background blobs, blur card, gradient typography |
-|  **Accessible** | ARIA labels, `role="alert"`, `aria-live` regions, keyboard navigation |
 
 ---
 
