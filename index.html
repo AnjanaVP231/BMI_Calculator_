@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="A modern and responsive BMI Calculator. Enter your weight and height to instantly find out your Body Mass Index and health category." />
+    <title>BMI Calculator | Know Your Health</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container" role="main">
+        <div class="card" aria-label="BMI Calculator Card">
+            <!-- Header -->
+            <header class="card-header">
+                <div class="icon-wrapper" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                </div>
+                <h1 class="card-title">BMI Calculator</h1>
+                <p class="card-subtitle">Discover your Body Mass Index instantly</p>
+            </header>
+
+            <!-- Form -->
+            <form id="bmi-form" class="bmi-form" novalidate>
+                <div class="input-group">
+                    <label for="weight" class="input-label">
+                        <span class="label-icon" aria-hidden="true">⚖️</span>
+                        Weight
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="weight" name="weight" class="input-field" placeholder="e.g. 70" min="1"
+                            max="500" step="0.1" aria-describedby="weight-error" autocomplete="off" />
+                        <span class="input-unit">kg</span>
+                    </div>
+                    <p class="error-msg" id="weight-error" role="alert" aria-live="polite"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="height" class="input-label">
+                        <span class="label-icon" aria-hidden="true">📏</span>
+                        Height
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="height" name="height" class="input-field" placeholder="e.g. 175"
+                            min="1" max="300" step="0.1" aria-describedby="height-error" autocomplete="off" />
+                        <span class="input-unit">cm</span>
+                    </div>
+                    <p class="error-msg" id="height-error" role="alert" aria-live="polite"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="age" class="input-label">
+                        <span class="label-icon" aria-hidden="true">🎂</span>
+                        Age
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="number" id="age" name="age" class="input-field" placeholder="e.g. 25" min="2"
+                            max="120" step="1" aria-describedby="age-error" autocomplete="off" />
+                        <span class="input-unit">yrs</span>
+                    </div>
+                    <p class="error-msg" id="age-error" role="alert" aria-live="polite"></p>
+                </div>
+
+                <button type="submit" id="calculate-btn" class="calculate-btn">
+                    <span class="btn-text">Calculate BMI</span>
+                    <span class="btn-icon" aria-hidden="true">→</span>
+                </button>
+            </form>
+
+            <!-- Result -->
+            <section id="result-section" class="result-section hidden" aria-live="polite" aria-label="BMI Result">
+                <div class="result-divider"></div>
+
+                <div class="result-card">
+                    <p class="result-label">Your BMI</p>
+                    <div class="result-value-wrapper">
+                        <span id="bmi-value" class="result-value"></span>
+                    </div>
+                    <div id="bmi-badge" class="bmi-badge">
+                        <span id="bmi-category" class="bmi-category-text"></span>
+                    </div>
+                    <div id="age-group-chip" class="age-group-chip"></div>
+                    <p id="age-note" class="age-note"></p>
+                </div>
+
+                <!-- BMI Scale Visual -->
+                <div class="bmi-scale" aria-label="BMI scale indicator">
+                    <div class="scale-bar">
+                        <div class="scale-segment seg-underweight" title="Underweight: < 18.5"></div>
+                        <div class="scale-segment seg-normal" title="Normal: 18.5–24.9"></div>
+                        <div class="scale-segment seg-overweight" title="Overweight: 25–29.9"></div>
+                        <div class="scale-segment seg-obese" title="Obese: ≥ 30"></div>
+                        <div id="scale-indicator" class="scale-indicator" aria-hidden="true"></div>
+                    </div>
+                    <div class="scale-labels">
+                        <span>0</span>
+                        <span>18.5</span>
+                        <span>25</span>
+                        <span>30</span>
+                        <span>40+</span>
+                    </div>
+                </div>
+
+                <!-- Healthy Weight Range & Advice -->
+                <div id="weight-advice-box" class="weight-advice-box">
+                    <div class="advice-row">
+                        <div class="advice-block">
+                            <p class="advice-label">🎯 Healthy Weight Range</p>
+                            <p class="advice-label advice-sublabel">for your height</p>
+                            <p id="healthy-range" class="advice-value healthy-range-value"></p>
+                        </div>
+                        <div class="advice-divider-v"></div>
+                        <div class="advice-block">
+                            <p class="advice-label">💡 Your Goal</p>
+                            <p class="advice-label advice-sublabel">to reach Normal BMI</p>
+                            <p id="weight-suggestion" class="advice-value suggestion-value"></p>
+                        </div>
+                    </div>
+                    <p id="advice-message" class="advice-message"></p>
+                </div>
+
+                <!-- Category Reference -->
+                <div class="category-reference">
+                    <h2 class="ref-title" id="ref-title-text">BMI Categories</h2>
+                    <ul class="ref-list">
+                        <li class="ref-item ref-underweight">
+                            <span class="ref-dot"></span>
+                            <span class="ref-text">Underweight</span>
+                            <span class="ref-range">&lt; 18.5</span>
+                        </li>
+                        <li class="ref-item ref-normal">
+                            <span class="ref-dot"></span>
+                            <span class="ref-text">Normal weight</span>
+                            <span class="ref-range">18.5 – 24.9</span>
+                        </li>
+                        <li class="ref-item ref-overweight">
+                            <span class="ref-dot"></span>
+                            <span class="ref-text">Overweight</span>
+                            <span class="ref-range">25 – 29.9</span>
+                        </li>
+                        <li class="ref-item ref-obese">
+                            <span class="ref-dot"></span>
+                            <span class="ref-text">Obese</span>
+                            <span class="ref-range">&ge; 30</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <button type="button" id="reset-btn" class="reset-btn">
+                    <span>↺</span> Recalculate
+                </button>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
