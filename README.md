@@ -1,7 +1,11 @@
 # 🏋️ BMI Calculator
 
 A **responsive, modern BMI (Body Mass Index) Calculator** built with pure HTML, CSS, and JavaScript — no frameworks, no dependencies. It uses your **age**, **weight**, and **height** to deliver personalised, age-adjusted BMI results along with a healthy weight range and a tailored gain/loss suggestion.
+---
 
+## 🌐 Live Preview
+
+Open https://avp-bmi-calculator.netlify.app/
 ---
 
 ## ✨ Features
