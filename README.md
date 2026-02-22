@@ -4,41 +4,22 @@ A **responsive, modern BMI (Body Mass Index) Calculator** built with pure HTML, 
 
 ---
 
-## 🌐 Live Preview
-
-Open `index.html` directly in any modern browser — no server required.
-
----
-
 ## ✨ Features
 
 | Feature | Detail |
 |---|---|
-| 🎂 **Age-Aware Calculation** | Applies different BMI thresholds for children (2–17), adults (18–64), and seniors (65+) |
-| ⚖️ **BMI Calculation** | Standard formula: `weight (kg) ÷ height (m)²`, shown to 2 decimal places |
-| 🏷️ **BMI Category Badge** | Colour-coded badge: Underweight · Normal · Overweight · Obese |
-| 🎯 **Healthy Weight Range** | Displays the exact kg range for a Healthy BMI at your height & age group |
-| 💡 **Gain / Loss Suggestion** | Tells you precisely how many kg to gain or lose to reach the normal range |
-| 📊 **Visual BMI Scale Bar** | Animated sliding indicator dot on a 4-segment colour bar |
-| 🗂️ **Dynamic Category Table** | Reference ranges update automatically per age group |
-| ⚠️ **Age Disclaimer** | Amber note for children (advises paediatrician) and seniors (explains adjusted range) |
-| ✅ **Input Validation** | Real-time inline errors on blur; clears as you type |
-| 📱 **Fully Responsive** | Works on desktop, tablet, and mobile |
-| 🎨 **Dark Glassmorphism UI** | Animated background blobs, blur card, gradient typography |
-| ♿ **Accessible** | ARIA labels, `role="alert"`, `aria-live` regions, keyboard navigation |
-
----
-
-## 📁 Project Structure
-
-```
-BMI_Calculator_/
-│
-├── index.html      ← App structure, form, result sections, ARIA markup
-├── style.css       ← Design system, glassmorphism card, animations, responsive layout
-├── script.js       ← BMI logic, age-group detection, validation, UI updates
-└── README.md       ← This file
-```
+|  **Age-Aware Calculation** | Applies different BMI thresholds for children (2–17), adults (18–64), and seniors (65+) |
+|  **BMI Calculation** | Standard formula: `weight (kg) ÷ height (m)²`, shown to 2 decimal places |
+|  **BMI Category Badge** | Colour-coded badge: Underweight · Normal · Overweight · Obese |
+|  **Healthy Weight Range** | Displays the exact kg range for a Healthy BMI at your height & age group |
+|  **Gain / Loss Suggestion** | Tells you precisely how many kg to gain or lose to reach the normal range |
+|  **Visual BMI Scale Bar** | Animated sliding indicator dot on a 4-segment colour bar |
+|  **Dynamic Category Table** | Reference ranges update automatically per age group |
+|  **Age Disclaimer** | Amber note for children (advises paediatrician) and seniors (explains adjusted range) |
+|  **Input Validation** | Real-time inline errors on blur; clears as you type |
+|  **Fully Responsive** | Works on desktop, tablet, and mobile |
+|  **Dark Glassmorphism UI** | Animated background blobs, blur card, gradient typography |
+|  **Accessible** | ARIA labels, `role="alert"`, `aria-live` regions, keyboard navigation |
 
 ---
 
@@ -144,39 +125,19 @@ Errors appear on field blur and clear as soon as the user starts typing again. A
 
 ## 🚀 How to Use
 
-1. **Open** `index.html` in any modern browser (Chrome, Firefox, Edge, Safari).
-2. **Enter** your Weight (kg), Height (cm), and Age (years).
-3. **Click** `Calculate BMI` or press **Enter**.
-4. View your:
+1. **Enter** your Weight (kg), Height (cm), and Age (years).
+2. **Click** `Calculate BMI` or press **Enter**.
+3. View your:
    - BMI value (colour-coded)
    - Category badge (Underweight / Normal / Overweight / Obese)
    - Age group chip (Child / Adult / Senior)
    - Visual scale bar with your position
    - Healthy weight range for your height & age
    - Personalised gain or loss suggestion
-5. Click **↺ Recalculate** to start over.
+4. Click **↺ Recalculate** to start over.
 
 ---
 
-## 🌍 Browser Compatibility
-
-| Browser | Supported |
-|---|---|
-| Chrome 88+ | ✅ |
-| Firefox 85+ | ✅ |
-| Edge 88+ | ✅ |
-| Safari 14+ | ✅ |
-| Opera 74+ | ✅ |
-
-> `backdrop-filter` (glassmorphism blur) requires a modern browser. On older browsers the card falls back to a semi-transparent dark background.
-
----
-
-## ⚕️ Medical Disclaimer
-
-> BMI is a **screening tool**, not a diagnostic measure. It does not account for muscle mass, bone density, fat distribution, or other individual health factors. Always consult a qualified healthcare professional for personalised health advice.
-
----
 
 ## 📄 License
 
@@ -184,4 +145,4 @@ This project is open-source and free to use for personal and educational purpose
 
 ---
 
-*Built with ❤️ using HTML · CSS · JavaScript*
+*Built using HTML · CSS · JavaScript*
